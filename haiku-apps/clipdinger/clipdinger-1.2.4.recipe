@@ -23,10 +23,9 @@ HOMEPAGE="https://github.com/humdingerb/clipdinger"
 COPYRIGHT="2015-2024 Humdinger"
 LICENSE="MIT"
 REVISION="2"
-srcGitRev="30b3d9a86b235644b2c97917cf004f128910c9d1"
-SOURCE_URI="$HOMEPAGE/archive/$srcGitRev.tar.gz"
-CHECKSUM_SHA256="3471076a590b361eeee0f733b3c79c78e82bc71f0da8b9a1c28b5eedd6da59ff"
-SOURCE_DIR="clipdinger-$srcGitRev"
+SOURCE_URI="$HOMEPAGE/archive/v$portVersion.tar.gz"
+CHECKSUM_SHA256="f87cccab90183922ea529e3d104e54720188ca09c560ff81fec43084c435029c"
+SOURCE_DIR="clipdinger-$portVersion"
 
 ARCHITECTURES="all"
 
@@ -68,8 +67,7 @@ INSTALL()
 	mkdir -p $appsDir $docDir
 
 	cp -af src/objects/Clipdinger $appsDir
-	cp -af ReadMe.html $docDir
-	cp -r images $docDir
+	cp -r documentation/* $docDir
 
 	mkdir -p $dataDir/user_launch
 	cp -af Clipdinger_userlaunch $dataDir/user_launch/Clipdinger
